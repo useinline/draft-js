@@ -69,7 +69,7 @@ class DraftEditorDecoratedLeaves extends React.Component<Props> {
     // confused on cursor movement. See http://jsfiddle.net/d157kLck/3/
     const dir = UnicodeBidiDirection.getHTMLDirIfDifferent(
       UnicodeBidi.getDirection(decoratedText),
-      direction,
+      direction || 'LTR',
     );
 
     return (
