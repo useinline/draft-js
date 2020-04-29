@@ -207,7 +207,7 @@ class DraftEditorBlock extends React.Component<Props> {
         // confused on cursor movement. See http://jsfiddle.net/d157kLck/3/
         const dir = UnicodeBidiDirection.getHTMLDirIfDifferent(
           UnicodeBidi.getDirection(decoratedText),
-          this.props.direction,
+          this.props.direction || 'LTR',
         );
 
         const commonProps: DraftDecoratorComponentProps = {
