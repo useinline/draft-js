@@ -254,6 +254,7 @@ const decodeRawEntityMap = (rawState: RawDraftContentState): * => {
       type,
       mutability,
       data || {},
+      key,
     );
   });
 
