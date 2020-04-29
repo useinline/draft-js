@@ -59,7 +59,7 @@ class DraftEditorDecoratedLeaves extends React.Component<Props> {
     const decoratedText = text.slice(leavesForLeafSet.first().get('start'), leavesForLeafSet.last().get('end')); // Resetting dir to the same value on a child node makes Chrome/Firefox
     // confused on cursor movement. See http://jsfiddle.net/d157kLck/3/
 
-    const dir = UnicodeBidiDirection.getHTMLDirIfDifferent(UnicodeBidi.getDirection(decoratedText), direction);
+    const dir = UnicodeBidiDirection.getHTMLDirIfDifferent(UnicodeBidi.getDirection(decoratedText), direction || 'LTR');
     return <DecoratorComponent {...decoratorProps} contentState={contentState} decoratedText={decoratedText} dir={dir} key={decoratorOffsetKey} entityKey={block.getEntityAt(leafSet.get('start'))} offsetKey={decoratorOffsetKey}>
         {children}
       </DecoratorComponent>;
