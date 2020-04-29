@@ -200,7 +200,7 @@ const decodeRawEntityMap = (rawState: RawDraftContentState): * => {
       data
     } = rawEntityMap[rawEntityKey]; // get the key reference to created entity
 
-    entityMap[rawEntityKey] = DraftEntity.__create(type, mutability, data || {});
+    entityMap[rawEntityKey] = DraftEntity.__create(type, mutability, data || {}, key);
   });
   return entityMap;
 };
